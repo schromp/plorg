@@ -24,7 +24,7 @@ func main() {
 		log.Fatal(ierr)
 	}
 
-	user := User{Name: "John", Age: 30}
+	user := User{Name: "John", Age: 31}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		err = tmpl.Execute(w, user)

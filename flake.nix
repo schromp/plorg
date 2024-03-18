@@ -11,7 +11,11 @@
     };
   };
 
-  outputs = inputs @ {flake-parts, gomod2nix, ...}:
+  outputs = inputs @ {
+    flake-parts,
+    gomod2nix,
+    ...
+  }:
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
       perSystem = {
@@ -22,7 +26,9 @@
         system,
         ...
       }: {
-        packages.default = pkgs.hello;
+        packages.default = pkgs.callPackage ./nix {
+          inherit (gomod2nix.legacyPackages.${system}) buildGoApplication;
+        };
 
         devShells.default = self'.devShells.air;
         devShells.air = pkgs.callPackage ./nix/shell.nix {
