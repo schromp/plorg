@@ -21,5 +21,6 @@ pkgs.mkShell {
     goEnv
     gomod2nix
     pkgs.air
+    pkgs.go-jet
   ];
 }

@@ -19,6 +19,9 @@ schema = 3
   [mod."github.com/gin-gonic/gin"]
     version = "v1.9.1"
     hash = "sha256-3FHywH5QuhTeQcdF8v06jt9vIkH0ON6ydpMYciAc8xQ="
+  [mod."github.com/go-jet/jet/v2"]
+    version = "v2.11.0"
+    hash = "sha256-lEl+ft+ZvqNJugcB7UmuNYvJrpIQNMpLctgeE1Xfg50="
   [mod."github.com/go-playground/locales"]
     version = "v0.14.1"
     hash = "sha256-BMJGAexq96waZn60DJXZfByRHb8zA/JP/i6f/YrW9oQ="
